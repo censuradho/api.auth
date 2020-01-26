@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon src/app.ts",
     "build": "tsc -p tsconfig.json",
     "test": "jest",
-    "start": "node build/server.js"
+    "start": "node build/app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

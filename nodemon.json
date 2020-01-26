@@ -3,5 +3,5 @@
     "src"
   ],
   "ext": "ts",
-  "exec": "sucrase-node src/server.ts"
+  "exec": "sucrase-node src/app.ts"
 }
