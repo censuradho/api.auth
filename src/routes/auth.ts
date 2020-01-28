@@ -4,7 +4,7 @@ import UsersController from '../controllers/Users'
 
 const authRoutes = Router()
 
-authRoutes.post('/signup', UsersController.store)
-authRoutes.post('/signin', UsersController.index)
+authRoutes.post('/api.signup', UsersController.store)
+authRoutes.post('/api.signin', UsersController.index)
 
 export default authRoutes

@@ -2,7 +2,9 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import path from 'path'
 
+// routes
 import authRoutes from './routes/auth'
 
 const app: express.Application = express()
@@ -16,6 +18,12 @@ app.use(express.json())
 app.use(cors())
 app.use(authRoutes)
 
-app.listen(process.env.PORT || 3000)
+// servir o front
+app.use(express.static(path.join(__dirname, 'build')))
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
 
 export default app

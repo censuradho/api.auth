@@ -5,7 +5,9 @@ import bcrypt from 'bcryptjs'
 export const hashPassword = (password: string): Promise<string> => (
   new Promise(resolve => {
     bcrypt.hash(password, 8, (err, hash) => {
-      if (err) throw err
+      if (err) {
+        console.log(err)
+      }
       resolve(hash)
     })
   })

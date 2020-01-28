@@ -22,13 +22,13 @@ export default {
     const { password, rePassword, email }: NewUser = req.body
 
     if (password !== rePassword) {
-      return res.status(401).json({ err: PASSWORD_NOT_MATCH })
+      return res.json({ err: PASSWORD_NOT_MATCH }).status(401)
     }
 
     const checkUserExist = await User.findOne({ email })
 
     if (checkUserExist) {
-      return res.status(401).json({ err: USER_ALREADY_EXIST })
+      return res.json({ err: USER_ALREADY_EXIST }).status(401)
     }
 
     const encriptedPassword = await hashPassword(password)
