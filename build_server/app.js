@@ -17,9 +17,8 @@ mongoose_1.default.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.D
 app.use(express_1.default.json());
 app.use(cors_1.default());
 app.use(auth_1.default);
-// servir o front
 app.use(express_1.default.static(path_1.default.join(__dirname, 'build')));
-app.get('/*', function (req, res) {
+app.get('/', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, 'build', 'index.html'));
 });
 exports.default = app;
