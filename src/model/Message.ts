@@ -18,7 +18,7 @@ const MessageSchema = new Schema(
     },
     tags: {
       type: Schema.Types.ObjectId,
-      ef: 'Tag'
+      ref: 'Tag'
     }
   },
   {

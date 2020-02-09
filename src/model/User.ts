@@ -11,7 +11,12 @@ const UserShema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  isAdmin: Boolean,
+  sheet: {
+    type: Schema.Types.ObjectId,
+    ref: 'Sheet',
+  },
 }, {
   timestamps: true
 })

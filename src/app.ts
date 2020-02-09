@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 
 // routes
 import authRoutes from './routes/auth'
+import sheetRoutes from './routes/sheet'
 
 const app: express.Application = express()
 
@@ -16,6 +17,6 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD
 app.use(express.json())
 app.use(cors())
 app.use(authRoutes)
-
+app.use(sheetRoutes)
 
 export default app

@@ -71,5 +71,13 @@ export default {
 
     const token = await generateToken(payload)
     return res.json({ token })
+  },
+
+  async find (req: Request, res: Response) {
+    const { email } = req.query
+
+    const findUser = await User.findOne(email)
+
+    res.json(findUser)
   }
 }
